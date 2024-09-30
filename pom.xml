@@ -20,9 +20,28 @@
 
     <build>
         <plugins>
+<!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+-->
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>art.aelaort.Main</mainClass>
+                </configuration>
                 <executions>
                     <execution>
                         <goals><goal>repackage</goal></goals>
@@ -40,6 +59,7 @@
                     <plugin>
                         <groupId>org.graalvm.buildtools</groupId>
                         <artifactId>native-maven-plugin</artifactId>
+                        <extensions>true</extensions>
                         <executions>
                             <execution>
                                 <id>build-native</id>
@@ -50,6 +70,7 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <mainClass>art.aelaort.Main</mainClass>
                             <skipNativeTests>true</skipNativeTests>
                         </configuration>
                     </plugin>
