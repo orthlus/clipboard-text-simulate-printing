@@ -11,8 +11,9 @@ import java.util.concurrent.TimeUnit;
 public class Main {
 	public static void main(String[] args) {
 		sleep(3);
-		setEnglish();
+//		setEnglish();
 		press(getTextFromClipboard());
+		pressEnter();
 	}
 
 	private static String getTextFromClipboard() {
@@ -27,6 +28,16 @@ public class Main {
 		try {
 			TimeUnit.SECONDS.sleep(i);
 		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private static void pressEnter() {
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
 			throw new RuntimeException(e);
 		}
 	}
