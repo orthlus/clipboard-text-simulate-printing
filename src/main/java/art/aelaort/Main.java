@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 	public static void main(String[] args) {
-		sleep(5);
+		sleep(3);
 		press(getTextFromClipboard());
 	}
 
