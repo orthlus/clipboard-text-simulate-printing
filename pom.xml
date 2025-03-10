@@ -40,7 +40,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>art.aelaort.Main</mainClass>
+                    <mainClass>art.aelaort.Main2</mainClass>
                 </configuration>
                 <executions>
                     <execution>

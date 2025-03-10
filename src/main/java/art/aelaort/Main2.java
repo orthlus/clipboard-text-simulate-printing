@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Test {
+public class Main2 {
 	private static final Map<Character, KeyInfo2> SPECIAL_CHARACTERS = new HashMap<>();
 	record KeyInfo2(int keyCode, boolean requiresShift) {}
 
