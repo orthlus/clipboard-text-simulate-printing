@@ -80,10 +80,21 @@ public class Main2 {
 		}
 	}
 
+	private static void pressEnter() {
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	public static void main(String[] args) throws Exception {
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		String text = (String) clipboard.getData(DataFlavor.stringFlavor);
 		Thread.sleep(3000);
 		simulateTyping(text);
+		pressEnter();
 	}
 }
